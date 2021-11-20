@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import shutil
+import dropbox
 
 # Get the website I want to get webcam footage off
 html_text = requests.get('https://www.terra-hd.de/rauschberg/').text

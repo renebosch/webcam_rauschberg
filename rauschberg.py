@@ -30,7 +30,7 @@ r = requests.get(full_url, stream=True)
 
 # Safe the file to the folder /images
 
-urllib.request.urlretrieve(full_url, "images/webcam1.jpg")
+urllib.request.urlretrieve(full_url, "/home/ubuntu/webcam_rauschberg/images/webcam1.jpg")
 
 
 #if r.status_code == 200:                     
@@ -55,7 +55,7 @@ def main():
     access_token = 'H4YI9GLvXcYAAAAAAAAAAdNkasNTmlKLKqzSI997hxrDCx5OpzUzFIG3CJiHhJv4'
     transferData = TransferData(access_token)
  
-    file_from = 'images/webcam1.jpg' # This is name of the file to be uploaded
+    file_from = '/home/ubuntu/webcam_rauschberg/images/webcam1.jpg' # This is name of the file to be uploaded
     file_to = '/rauschberg/webcam1.jpg'  # This is the full path to upload the file to, including name that you wish the file to be called once uploaded.
  
     # API v2

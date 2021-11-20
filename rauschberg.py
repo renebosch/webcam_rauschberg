@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import shutil
 import dropbox
+import urllib.request
 
 # Get the website I want to get webcam footage off
 html_text = requests.get('https://www.terra-hd.de/rauschberg/').text
@@ -29,10 +30,13 @@ r = requests.get(full_url, stream=True)
 
 # Safe the file to the folder /images
 
-if r.status_code == 200:                     
-   with open("/home/ubuntu/webcam_rauschberg/images/webcam1.jpg", 'wb') as f: 
-      r.raw.decode_content = True
-      shutil.copyfileobj(r.raw, f)
+urllib.request.urlretrieve(full_url, "images/webcam1.jpg")
+
+
+#if r.status_code == 200:                     
+#   with open("/home/ubuntu/webcam_rauschberg/images/webcam1.jpg", 'wb') as f: 
+#      r.raw.decode_content = True
+#      shutil.copyfileobj(r.raw, f)
       
       
 # Take the file and upload it to Dropbox

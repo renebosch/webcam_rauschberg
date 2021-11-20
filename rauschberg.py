@@ -30,7 +30,7 @@ r = requests.get(full_url, stream=True)
 # Safe the file to the folder /images
 
 if r.status_code == 200:                     
-   with open("images/webcam1.jpg", 'wb') as f: 
+   with open("/home/ubuntu/webcam_rauschberg/images/webcam1.jpg", 'wb') as f: 
       r.raw.decode_content = True
       shutil.copyfileobj(r.raw, f)
       
